@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping
@@ -40,5 +41,10 @@ public class FormulariosController {
     @GetMapping("/listar/destinos")
     public ResponseEntity<List<Destinos>> listarDestinos(){
         return ResponseEntity.ok(destinosRepository.findAll());
+    }
+
+    @GetMapping("/listar/destinos/{id}")
+    public Optional<Destinos> listaDestinosId(@PathVariable(value="id") Integer id){
+        return destinosRepository.findById(id);
     }
 }
