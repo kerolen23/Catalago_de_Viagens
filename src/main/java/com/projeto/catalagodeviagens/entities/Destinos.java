@@ -1,7 +1,12 @@
 package com.projeto.catalagodeviagens.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 public class Destinos {
 
@@ -13,63 +18,20 @@ public class Destinos {
     private String nomeDestino;
 
     @Column(nullable = false)
+    private String cidade;
+
+    @Column(nullable = false)
+    private String estado;
+
+    @Column(nullable = false)
     private String pais;
+
+    @Column(nullable = false)
+    private String continente;
 
     @Column(nullable = false)
     private String descricao;
 
     @Column(nullable = false)
-    private String dica;
-
-    public Destinos(){
-
-    }
-
-    public Destinos(Integer id, String nomeDestino, String pais, String descricao, String dica) {
-        this.id = id;
-        this.nomeDestino = nomeDestino;
-        this.pais = pais;
-        this.descricao = descricao;
-        this.dica = dica;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNomeDestino() {
-        return nomeDestino;
-    }
-
-    public void setNomeDestino(String nomeDestino) {
-        this.nomeDestino = nomeDestino;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getDica() {
-        return dica;
-    }
-
-    public void setDica(String dica) {
-        this.dica = dica;
-    }
+    private String resumo;
 }
